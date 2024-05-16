@@ -8,6 +8,10 @@ interface Props {
     position: string;
     department: string;
   };
+  testPosition?: {
+    top: number;
+    left: number;
+  };
 }
 
 const montserrat = Montserrat({
@@ -17,15 +21,24 @@ const montserrat = Montserrat({
   weight: "400",
 });
 
-export const Preview = ({ imageData, refObject }: Props) => {
+export const Preview = ({ imageData, refObject, testPosition }: Props) => {
   return (
     <div className="flex justify-center">
-      <div ref={refObject} className="flex gap-10 h-20 bg-white imageContainer px-3">
+      <div
+        ref={refObject}
+        className="flex gap-10 h-20 bg-white imageContainer px-3"
+      >
         <div className="h-full flex items-center">
           <BCNCLogoBlue />
         </div>
         <div className="flex-1 lineHeight relative">
-          <div className="absolutePosition">
+          <div
+            className="absolutePosition"
+            style={{
+              ...(testPosition?.left && { left: testPosition.left }),
+              ...(testPosition?.top && { top: testPosition.top }),
+            }}
+          >
             <h1 className={`${montserrat.className} nameText`}>
               {imageData.name}
             </h1>
