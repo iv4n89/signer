@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #142e53;
+  display: flex;
+  justify-content: center;
+}
+
 .container {
   background-color: #142e53;
   height: 100vh;
@@ -9,7 +15,7 @@
 }
 
 .formContainer {
-  width: 70vw;
+  width: 850px;
 }
 
 input {
