@@ -2,7 +2,7 @@
 
 import { toPng, toJpeg } from "html-to-image";
 import React from "react";
-import { Montserrat } from "next/font/google";
+import { Montserrat, Montserrat_Alternates } from "next/font/google";
 import Image from "next/image";
 
 const baseColor = "#142e53";
@@ -18,7 +18,14 @@ const montserratBold = Montserrat({
   subsets: ["latin"],
   display: "swap",
   style: "normal",
-  weight: "600",
+  weight: "500",
+});
+
+const alternative = Montserrat_Alternates({
+  subsets: ["latin"],
+  display: "swap",
+  style: "normal",
+  weight: "400",
 });
 
 export default function Home() {
@@ -36,7 +43,9 @@ export default function Home() {
 
     toPng(ref.current, { pixelRatio: 2.5 })
       .then((dataUrl) => {
-        const nameNormalized = imageData.name.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+        const nameNormalized = imageData.name
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "");
         const link = document.createElement("a");
         link.download = `${nameNormalized}.png`;
         link.href = dataUrl;
@@ -103,8 +112,8 @@ export default function Home() {
         Generar y Descargar Firma
       </button>
       <div className="flex justify-center">
-        <div ref={ref} className="flex gap-10 h-20 bg-white imageContainer">
-          <div className="pt-1 logoPosition">
+        <div ref={ref} className="flex gap-10 h-20 bg-white imageContainer items-center px-3">
+          <div className="pt-1">
             <Image
               width={170}
               height={70}
@@ -112,8 +121,8 @@ export default function Home() {
               alt="My Image"
             />
           </div>
-          <div className="flex-1 textPosition lineHeight">
-            <h1 className={`${montserratBold.className} nameText`}>
+          <div className="flex-1 lineHeight">
+            <h1 className={`${montserrat.className} nameText`}>
               {imageData.name}
             </h1>
             <p className={`${montserrat.className} positionText`}>

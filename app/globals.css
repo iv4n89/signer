@@ -29,18 +29,20 @@ input:focus {
 }
 
 .imageContainer {
-  width: 448px;
+  max-width: 1024px;
+  min-width: 448px;
 }
 
 .nameText {
   color: #152F52;
   font-size: 20px;
+  padding-left: 0.3px;
 }
 
 .positionText, .departmentText {
   color: #152F52;
   font-size: 13px;
-  padding-left: 1.6px;
+  padding-left: 1.9px;
 }
 
 .logoPosition {
