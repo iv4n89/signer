@@ -36,18 +36,25 @@ export default function Home() {
 
     toPng(ref.current, { pixelRatio: 2.5 })
       .then((dataUrl) => {
+        const nameNormalized = imageData.name.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
         const link = document.createElement("a");
-        link.download = "my-image.png";
+        link.download = `${nameNormalized}.png`;
         link.href = dataUrl;
         link.click();
       })
       .catch((error) => {
         console.error("oops, something went wrong!", error);
       });
-  }, [ref]);
+  }, [ref, imageData]);
 
   return (
     <div className="flex justify-center items-center flex-col gap-3 container">
+      <Image
+        src="/01-white-BCNC.png"
+        alt="BCNC Logo"
+        width={600}
+        height={200}
+      />
       <div className="flex flex-col w-full gap-10 items-center pb-10 formContainer">
         <div className="flex flex-col w-full">
           <label htmlFor="name">Nombre</label>
