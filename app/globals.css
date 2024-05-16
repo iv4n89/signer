@@ -33,6 +33,11 @@ input:focus {
   min-width: 448px;
 }
 
+.absolutePosition {
+  position: relative;
+  top: 14px;
+}
+
 .nameText {
   color: #152F52;
   font-size: 20px;
@@ -45,14 +50,9 @@ input:focus {
   padding-left: 1.9px;
 }
 
-.logoPosition {
-  position: relative;
-  top: -4px;
-}
-
 .textPosition {
   position: relative;
-  top: -4px;
+  top: 290px;
 }
 
 .lineHeight {
