@@ -28,32 +28,46 @@ input:focus {
   outline: none;
 }
 
+/* Preview and final image width */
 .imageContainer {
-  max-width: 1024px;
-  min-width: 448px;
+  max-width: 64em;
+  /* 1024px */
+  min-width: 28em;
+  /* 448px */
 }
 
+/* Change this positions to move text in the final image generated */
 .absolutePosition {
   position: relative;
-  top: 12px;
-  left: -3px;
+  top: 0.75em;
+  /* 12px */
+  left: -0.1875em;
+  /* -3px */
 }
 
+/* Name text */
 .nameText {
   color: #152F52;
-  font-size: 20px;
-  padding-left: 0.3px;
+  font-size: 1.25em;
+  /* 20px */
+  padding-left: 0.01875em;
+  /* 0.3px */
 }
 
+/* Position and deparment text */
 .positionText, .departmentText {
   color: #152F52;
-  font-size: 13px;
-  padding-left: 1.9px;
+  font-size: 0.8125em;
+  /* 13px */
+  padding-left: 0.11875em;
+  /* 1.9px */
 }
 
+/* Change this to move text absolute position */
 .textPosition {
   position: relative;
-  top: 290px;
+  top: 18.125em; 
+  /* 290px */
 }
 
 .lineHeight {

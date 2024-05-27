@@ -9,8 +9,8 @@ interface Props {
     department: string;
   };
   testPosition?: {
-    top: number;
-    left: number;
+    top?: number;
+    left?: number;
   };
 }
 
@@ -32,14 +32,13 @@ export const Preview = ({ imageData, refObject, testPosition }: Props) => {
           <BCNCLogoBlue />
         </div>
         <div className="flex-1 lineHeight relative">
-          <div
-            className="absolutePosition"
-            style={{
-              ...(testPosition?.left && { left: testPosition.left }),
-              ...(testPosition?.top && { top: testPosition.top }),
-            }}
-          >
-            <h1 className={`${montserrat.className} nameText`}>
+          <div className="absolutePosition">
+            <h1
+              className={`${montserrat.className} nameText`}
+              style={{
+                ...(testPosition?.left && { padding: `0 0 0 ${testPosition.left / 16}em` }),
+              }}
+            >
               {imageData.name}
             </h1>
             <p className={`${montserrat.className} positionText`}>
