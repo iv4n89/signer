@@ -1,5 +1,9 @@
 import { Montserrat } from "next/font/google";
 import { BCNCLogoBlue } from "./bcnc-logo";
+import {
+  getXTranslateMagicForPosition,
+  getXTranslateNumber,
+} from "../lib/letterCombinationPaddings";
 
 interface Props {
   refObject: React.RefObject<HTMLDivElement>;
@@ -8,7 +12,7 @@ interface Props {
     position: string;
     department: string;
   };
-  testPosition?: {
+  justifyPosition?: {
     top?: number;
     left?: number;
   };
@@ -21,7 +25,9 @@ const montserrat = Montserrat({
   weight: "400",
 });
 
-export const Preview = ({ imageData, refObject, testPosition }: Props) => {
+export const Preview = ({ imageData, refObject, justifyPosition }: Props) => {
+  const nameJustifyPosition = getXTranslateNumber(imageData?.name);
+
   return (
     <div className="flex justify-center">
       <div
@@ -36,15 +42,33 @@ export const Preview = ({ imageData, refObject, testPosition }: Props) => {
             <h1
               className={`${montserrat.className} nameText`}
               style={{
-                ...(testPosition?.left && { padding: `0 0 0 ${testPosition.left / 16}em` }),
+                transform: `translateX(${
+                  justifyPosition?.left !== 0
+                    ? justifyPosition?.left
+                    : nameJustifyPosition
+                }em)`,
               }}
             >
               {imageData.name}
             </h1>
-            <p className={`${montserrat.className} positionText`}>
+            <p
+              className={`${montserrat.className} positionText`}
+              style={{
+                transform: `translateX(${getXTranslateMagicForPosition(
+                  imageData.position
+                )}em)`,
+              }}
+            >
               {imageData.position}
             </p>
-            <p className={`${montserrat.className} departmentText`}>
+            <p
+              className={`${montserrat.className} departmentText`}
+              style={{
+                transform: `translateX(${getXTranslateMagicForPosition(
+                  imageData.department
+                )}em)`,
+              }}
+            >
               {imageData.department}
             </p>
           </div>
