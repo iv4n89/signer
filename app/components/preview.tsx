@@ -43,7 +43,7 @@ export const Preview = ({ imageData, refObject, justifyPosition }: Props) => {
               className={`${montserrat.className} nameText`}
               style={{
                 transform: `translateX(${
-                  justifyPosition?.left !== 0
+                  !!justifyPosition?.left && justifyPosition.left !== 0
                     ? justifyPosition?.left
                     : nameJustifyPosition
                 }em)`,
