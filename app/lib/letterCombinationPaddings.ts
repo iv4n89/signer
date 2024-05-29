@@ -1,5 +1,5 @@
 const firstLetterCombinationsForName = {
-  A: 0.07,
+  A: 0.09,
   B: -0.03,
   C: 0.03,
   D: -0.03,
