@@ -1,5 +1,5 @@
 const firstLetterCombinationsForName = {
-  A: 0.09,
+  A: 0.04,
   B: -0.03,
   C: 0.03,
   D: -0.03,
@@ -8,7 +8,7 @@ const firstLetterCombinationsForName = {
   G: 0.03,
   H: -0.03,
   I: -0.03,
-  J: 0.03,
+  J: 0.045,
   K: -0.03,
   L: -0.03,
   M: -0.03,
@@ -18,12 +18,12 @@ const firstLetterCombinationsForName = {
   Q: 0.03,
   R: -0.03,
   S: 0.02,
-  T: 0.03,
+  T: 0.04,
   U: -0.03,
   V: 0.06,
-  W: -0.02,
+  W: 0.04,
   X: 0.03,
-  Y: -0.03,
+  Y: 0.04,
   Z: 0.03,
 };
 const firstLetterNegative = ['B', 'D', 'E', 'F', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'R', 'U'];
